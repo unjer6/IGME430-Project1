@@ -4,7 +4,7 @@ const index = fs.readFileSync(`${__dirname}/../hosted/client.html`);
 const style = fs.readFileSync(`${__dirname}/../hosted/style.css`);
 const js = fs.readFileSync(`${__dirname}/../hosted/client.js`);
 
-const users = {};
+//const users = {};
 
 // Helpers
 
