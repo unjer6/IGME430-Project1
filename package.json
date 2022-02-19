@@ -12,7 +12,7 @@
     "pretest": "eslint ./src --fix",
     "test": "echo \"Tests complete\"",
     "nodemon": "nodemon -e js,html,css --watch ./src --watch ./hosted ./src/server.js",
-    "heroku-postbuild": "webpack"
+    "webpack-build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -28,9 +28,7 @@
     "eslint": "^8.9.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.25.4",
-    "nodemon": "^2.0.15"
-  },
-  "dependencies": {
+    "nodemon": "^2.0.15",
     "webpack": "^5.69.1",
     "webpack-cli": "^4.9.2"
   }
