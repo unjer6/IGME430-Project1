@@ -10,10 +10,14 @@ const urlStruct = {
     '/': responseHandler.getIndex,
     '/style.css': responseHandler.getCSS,
     '/client.js': responseHandler.getJS,
+
+    '/getList': null,       // gets a grocery list using a name query param. if no name is given then returns a list of all the names of lists in the db
   },
   HEAD: {
+      '/getList': null,
   },
   POST: {
+      '/addList': null,      // adds (or updates) a list to the database passing in json as the body
   },
 
   notFound: responseHandler.notFound,
@@ -35,7 +39,7 @@ const parseBody = (request, response, handler) => {
 
   request.on('end', () => {
     const bodyString = Buffer.concat(body).toString();
-    const bodyParams = query.parse(bodyString);
+    const bodyParams = JSON.parse(bodyString);
 
     handler(request, response, bodyParams);
   });
