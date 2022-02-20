@@ -11,13 +11,15 @@ const urlStruct = {
     '/style.css': responseHandler.getCSS,
     '/client.js': responseHandler.getJS,
 
-    '/getList': null,       // gets a grocery list using a name query param. if no name is given then returns a list of all the names of lists in the db
+    '/getListNames': responseHandler.getListNames, // returns a list of all the names of lists in the db
+    '/getList': responseHandler.getList, // gets a grocery list using a name query param
   },
   HEAD: {
-      '/getList': null,
+    '/getListNames': responseHandler.getListNamesHead,
+    '/getList': responseHandler.getListHead,
   },
   POST: {
-      '/addList': null,      // adds (or updates) a list to the database passing in json as the body
+    '/addList': responseHandler.addList, // adds (or updates) a list to the database passing in json as the body
   },
 
   notFound: responseHandler.notFound,
