@@ -1,9 +1,3 @@
-const fs = require('fs');
-
-const index = fs.readFileSync(`${__dirname}/../hosted/client.html`);
-const style = fs.readFileSync(`${__dirname}/../hosted/style.css`);
-const js = fs.readFileSync(`${__dirname}/../hosted/client.js`);
-
 const lists = {};
 
 // Helpers
@@ -29,24 +23,12 @@ const getHead = (request, response, code, type) => {
   response.end();
 };
 
-// Get handlers
-
-const getIndex = (request, response) => {
-  getData(request, response, 200, 'text/html', index);
-};
-
-const getCSS = (request, response) => {
-  getData(request, response, 200, 'text/css', style);
-};
-
-const getJS = (request, response) => {
-  getData(request, response, 200, 'application/javascript', js);
-};
-
 const notFound = (request, response) => {
   const data = createErrorJSON('The page you are looking for was not found.', 'notFound');
   getData(request, response, 404, 'application/json', data);
 };
+
+// Get handlers
 
 const getListNames = (request, response) => {
   const data = { names: [] };
@@ -73,10 +55,6 @@ const getList = (request, response, params) => {
 };
 
 // Head handlers
-
-const notFoundHead = (request, response) => {
-  getHead(request, response, 404, 'application/json');
-};
 
 const getListNamesHead = (request, response) => {
   getHead(request, response, 200, 'application/json');
@@ -124,16 +102,11 @@ const addList = (request, response, params) => {
 
 module.exports = {
   // GET
-  getIndex,
-  getCSS,
-  getJS,
   getListNames,
   getList,
-  notFound,
   // HEAD
   getListNamesHead,
   getListHead,
-  notFoundHead,
   // POST
   addList,
 };

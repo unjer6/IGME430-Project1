@@ -1,0 +1,21 @@
+What is the intended purpose of your application?
+ -To provide a grocery list app for tracking grocery lists.
+
+What data will be stored and delivered by the API?
+ -Your lists of items inside your grocery lists.
+
+What work has been completed for this prototype?
+ -The backend is 99% done and the front end has a demo showing the API endpoints.
+
+What work is left, and how do you plan to complete it?
+ -The entire front end needs to be developed. I plan on using Bulma to style it.
+
+Do you have a plan for going above and beyond? If so, what is it?
+ -I plan on using the Bulma framework, and if I have time I would like to implement a node module that allows
+  for predictive text when users are entering in fields.
+
+If you used any borrowed code or code fragments, where did you get them from?
+ -All my code is my own or borrowed from in class demos.
+
+What do the code fragments do? Where are they in your code?
+ -Starting the server, handling and parsing URLs, and handling POST requests are all borrowed from demos.
