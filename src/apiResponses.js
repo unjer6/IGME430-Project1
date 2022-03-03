@@ -100,6 +100,22 @@ const addList = (request, response, params) => {
   return getHead(request, response, statusCode, 'application/json');
 };
 
+// DELETE handlers
+
+const deleteList = (request, response, params) => {
+  if (!params.name) {
+    const data = {
+      id: 'deleteListMissingParams',
+      message: 'Name is required.',
+    };
+    return getData(request, response, 400, 'application/json', JSON.stringify(data));
+  }
+
+  delete lists[params.name];
+
+  return getHead(request, response, 204, 'application/json');
+};
+
 module.exports = {
   // GET
   getListNames,
@@ -109,4 +125,6 @@ module.exports = {
   getListHead,
   // POST
   addList,
+  // DELETE
+  deleteList,
 };

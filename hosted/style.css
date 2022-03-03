@@ -17,3 +17,40 @@ body{
 li:not(:last-child) {
   margin-bottom: 5px;
 }
+
+/* Chevron buttons */
+.chevron-up {
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: 0.25em 0.25em;
+  color: #000;
+  background: transparent url("images/chevron-up.png") center/2em auto no-repeat;
+  opacity: 0.5;
+}
+
+.chevron-down {
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: 0.25em 0.25em;
+  color: #000;
+  background: transparent url("images/chevron-down.png") center/2em auto no-repeat;
+  opacity: 0.5;
+}
+
+.chevron-up:hover {
+  opacity: 0.75;
+}
+
+.chevron-up:focus {
+  opacity: 1;
+}
+
+.chevron-down:hover {
+  opacity: 0.75;
+}
+
+.chevron-down:focus {
+  opacity: 1;
+}
